@@ -116,7 +116,7 @@ $( document ).ready(function() {
 		    	$('#propertyValue').val($flattenResult[$(this).val()]);
 			$("#propertyValueContainer").show();
 		   	});
-		    $("#propertyValueContainer").show();
+		    $("#propertyValueContainer").hide();
 	            $("#searchresult").show();
 		}).fail(function() {
 		  	$("#searchnoresult").show();
@@ -240,7 +240,7 @@ $( document ).ajaxComplete(function() {
 	  		<option value="3">Three</option>
 	    </select>
 	  	</div>
-	  	<div class="form-group">
+	  	<div class="form-group" id="propertyValueContainer">
 	    	<label for="propertyValue">Property Value:</label>
 	    	<textarea class="form-control" id="propertyValue" rows="3" readonly></textarea>
 	  	</div>
