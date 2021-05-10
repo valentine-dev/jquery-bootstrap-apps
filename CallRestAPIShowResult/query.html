@@ -28,6 +28,12 @@ $( document ).ready(function() {
 	$("#searchresult").hide(); 
 	$("#searchnoresult").hide();
 	
+	$('#query').change(function() {
+    		$("#message").hide();
+		$("#searchresult").hide(); 
+		$("#searchnoresult").hide();
+   	});
+	
 	function updateUIAfterSubmit(){
 		$("#queryform :input").prop("disabled", true);
 		$("#message").text("Waiting for response ...");
@@ -108,7 +114,10 @@ $( document ).ready(function() {
 		   	// listener
 		    $('#propertyName').change(function() {
 		    	$('#propertyValue').val($flattenResult[$(this).val()]);
+			$("#propertyValueContainer").show();
 		   	});
+		    $("#propertyValueContainer").show();
+	            $("#searchresult").show();
 		}).fail(function() {
 		  	$("#searchnoresult").show();
 		}).always(function() {
@@ -225,7 +234,7 @@ $( document ).ajaxComplete(function() {
 	    <div class="form-group">
 	    <label for="propertyName">Property Name:</label>
 	    <select class="form-control" id="propertyName">
-	      	<option selected>Please select one property from below</option>
+	      	<option selected>Please select property name from below to see its value</option>
 	    	<option value="1">One</option>
 	    	<option value="2">Two</option>
 	  		<option value="3">Three</option>
